@@ -21,7 +21,7 @@
 			$data_check_arr[] = $key . '=' . $value;
 		sort( $data_check_arr );
 
-		if ( strcmp( hash_hmac( 'sha256', implode( '\n', $data_check_arr ), hash( 'sha256', BOT_TOKEN, true ) ), $check_hash ) !== 0 )
+		if ( strcmp( hash_hmac( 'sha256', implode( "\n", $data_check_arr ), hash( 'sha256', BOT_TOKEN, true ) ), $check_hash ) !== 0 )
 			throw new Exception( 'Data is NOT from Telegram' );
 
 		if ( ( time() - $_GET[ 'auth_date' ] ) > 86400 )
