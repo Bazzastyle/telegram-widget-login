@@ -1,8 +1,8 @@
 <?php
 	class Database {
-    private $PDO = null;
+		private $PDO = null;
 
-    public function __construct ( string $dbhost, string $dbname, string $user, string $password ) {
+		public function __construct ( string $dbhost, string $dbname, string $user, string $password ) {
 			try {
 				$this->PDO = new PDO( "mysql:host={$dbhost};dbname={$dbname};charset=utf8mb4;", $user, $password );
 				$this->PDO->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -11,9 +11,9 @@
 			catch ( Exception $e ) {
 				throw new Exception( $e->getMessage() );
 			}
-    }
+		}
 
-    public function query ( string $query, array $params ) {
+		public function query ( string $query, array $params ) {
 			try {
 
 				$stmt = $this->PDO->prepare( $query );
@@ -35,13 +35,13 @@
 			catch( PDOException $e ) {
 				throw new Exception( $e->getMessage() );
 			}
-    }
+		}
 	}
 
 	$db = new Database (
-		dbhost: 'localhost',
-		dbname: 'telegram_login',
-		user: 'user',
+		dbhost:   'localhost',
+		dbname:   'telegram_login',
+		user:     'user',
 		password: 'password'
 	);
 

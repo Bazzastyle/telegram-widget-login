@@ -14,17 +14,17 @@
 			[
 				'param'	=> ':id',
 				'value'	=> $_SESSION[ 'telegram_id' ],
-				'type'	=> 'int'
+				'type'  => 'int'
 			]
 		]
 	);
 
-	$firstName			= $user_data[ 0 ][ 'first_name' ];
-	$lastName				= $user_data[ 0 ][ 'last_name' ];
+	$firstName      = $user_data[ 0 ][ 'first_name' ];
+	$lastName       = $user_data[ 0 ][ 'last_name' ];
 	$profilePicture	= $user_data[ 0 ][ 'profile_picture' ];
-	$telegramID			= $user_data[ 0 ][ 'telegram_id' ];
-	$username				= $user_data[ 0 ][ 'telegram_username' ];
-	$userID					= $user_data[ 0 ][ 'id' ];
+	$telegramID     = $user_data[ 0 ][ 'telegram_id' ];
+	$username       = $user_data[ 0 ][ 'telegram_username' ];
+	$userID         = $user_data[ 0 ][ 'id' ];
 ?>
 
 <!DOCTYPE html>

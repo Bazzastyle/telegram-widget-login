@@ -31,32 +31,32 @@
 			[
 				'param' => ':first_name',
 				'value' => htmlspecialchars( $_GET[ 'first_name' ] ),
-				'type'	=> 'str'
+				'type'  => 'str'
 			],
 			[
 				'param' => ':last_name',
 				'value' => isset( $_GET[ 'last_name' ] ) ? htmlspecialchars( $_GET[ 'last_name' ] ) : null,
-				'type'	=> 'str'
+				'type'  => 'str'
 			],
 			[
 				'param' => ':telegram_id',
 				'value' => $_GET[ 'id' ],
-				'type'	=> 'int'
+				'type'  => 'int'
 			],
 			[
 				'param' => ':telegram_username',
 				'value' => $_GET[ 'username' ] ?? null,
-				'type'	=> 'str'
+				'type'  => 'str'
 			],
 			[
 				'param' => ':profile_picture',
 				'value' => $_GET[ 'photo_url' ] ?? null,
-				'type'	=> 'str'
+				'type'  => 'str'
 			],
 			[
 				'param' => ':auth_date',
 				'value' => $_GET[ 'auth_date' ],
-				'type'	=> 'int'
+				'type'  => 'int'
 			]
 		];
 
@@ -68,7 +68,7 @@
 				[
 					'param' => ':id',
 					'value' => $_GET[ 'id' ],
-					'type'	=> 'int'
+					'type'  => 'int'
 				]
 			]
 		);
@@ -78,13 +78,13 @@
 				'UPDATE
 					`users`
 				SET
-					`first_name`				= :first_name,
-					`last_name`					= :last_name,
+					`first_name`        = :first_name,
+					`last_name`         = :last_name,
 					`telegram_username` = :telegram_username,
-					`profile_picture`		= :profile_picture,
-					`auth_date`					= :auth_date
+					`profile_picture`   = :profile_picture,
+					`auth_date`         = :auth_date
 				WHERE
-					`telegram_id`				= :telegram_id',
+					`telegram_id`       = :telegram_id',
 				$params
 			);
 		else 
@@ -109,7 +109,7 @@
 			);
 
 		$_SESSION = [
-			'logged-in'		=> TRUE,
+			'logged-in'   => TRUE,
 			'telegram_id' => $_GET[ 'id' ]
 		];
 
