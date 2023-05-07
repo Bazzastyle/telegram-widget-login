@@ -43,7 +43,7 @@
 		<div class='middle-center'>
 			<h1>Hello, <?= $firstName ?> <?= $lastName ?? '' ?>!</h1>
 
-			<?php if (!is_null($profilePicture)) : ?>
+			<?php if ( !is_null( $profilePicture ) ) : ?>
 				<a href='<?= $profilePicture ?>' target='_blank'>
 					<img class='profile-picture' src='<?= $profilePicture . '?v=' . time() ?>'>
 				</a>
@@ -51,11 +51,11 @@
 
 			<h2 class='user-data'>First Name: <?= $firstName ?></h2>
 
-			<?php if (!is_null($lastName)) : ?>
+			<?php if ( !is_null( $lastName ) ) : ?>
 				<h2 class='user-data'>Last Name: <?= $lastName ?></h2>
 			<?php endif; ?>
 
-			<?php if (!is_null($username)) : ?>
+			<?php if ( !is_null( $username ) ) : ?>
 				<h2 class='user-data'>Username: <a href='<?= "https://t.me/{$username}" ?>' target='_blank'><?= "@{$username}" ?></a></h2>
 			<?php endif; ?>
 
